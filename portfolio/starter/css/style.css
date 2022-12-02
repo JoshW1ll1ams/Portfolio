@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --darkblue: #020E54;
+  --cream: #FFEAB8;
+  --lightgreen: #A6DEAE;
+}
+
+
+a{
+  text-decoration: none;
+  border-bottom: 3px solid var(--darkblue);
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--darkblue);
+  font-size: 18px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+h2{
+  font-size: 55px;
+  text-align: end;
+  color: var(--darkblue);
+ 
+}
+/* HEADER BAR */
+header
+{
+  background-color: var(--lightgreen);
+  width: 100%;
+  height: 95px;
+}
+header h1
+{
+  background-color: var(--cream);
+  width: 1fr;
+  height: 1fr;
+  position: absolute;
+  top: 10px;
+  padding-left: 8%;
+  font-size: 50px;
+
+
+}
+
+header .container
+{
+  position: absolute;
+  display: flex;
+
+  width: 35%;
+  height: 60px;
+  margin-top: 16px;
+}
+
+header nav
+{
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  right: 7%;
+}
+
+/* BANNER */
+
+.hero-banner div
+{
+  background-image: url(../images/02-hero-bg.jpg);
+  height: 200px;
+}
+
+.hero-banner h2
+{
+  position: absolute;
+  font-size: 45px;
+  padding: 0px 20px 0px 20px;
+  right: 135px;
+  top: 210px;
+  background-color: var(--cream);
+}
+
+/* about me */
+
+#about
+{
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: 
+  "abouttitle abouttext"
+  ;
+  height: 300px;
+}
+
+#abouttitle
+{
+  grid-area: abouttitle;
+  width: 50%;
+  margin-top: 40px;
+  margin-left: 30%;
+
+}
+#aboutline {
+  position: absolute;
+  border-right: 4px solid var(--darkblue);
+  height: 200px;
+  margin-left: 11%;
+}
+
+
+
+#abouttext
+{
+  margin-right: 10%;
+  margin-top: 70px;
+  grid-area: abouttext;
+}
+
+/* work */
+
+#work
+{
+  display: grid;
+  grid-template-rows: 50% 25% 25%;
+  grid-template-columns: 19% 37% 37%;
+  grid-template-areas: 
+  "worktitle workimg1 workimg1"
+  "worktitle workimg2 workimg3"
+  "worktitle workimg4 workimg5"
+  ;
+  height: 900px;
+}
+
+
+
+#worktitle
+{
+  width: 50%;
+  margin-left: 34%;
+
+}
+
+#workline {
+  position: absolute;
+  border-right: 4px solid var(--darkblue);
+  height: 905px;
+  margin-left: 10.4%;
+}
+
+#workimg1
+{
+  background-image: url(../images/02-portfolio-1.jpg);
+  grid-area: workimg1;
+}
+
+#workimg2
+{
+ 
+  background-image: url(../images/02-portfolio-1.jpg);
+  grid-area: workimg2;
+}
+
+#workimg3
+{
+ 
+  background-image: url(../images/02-portfolio-1.jpg);
+  grid-area: workimg3;
+}
+
+#workimg4
+{
+
+  background-image: url(../images/02-portfolio-1.jpg);
+  grid-area: workimg4;
+}
+
+#workimg5
+{
+
+  background-image: url(../images/02-portfolio-1.jpg);
+  grid-area: workimg5;
+}
+
+.categoryGridArea {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px;
+  cursor: pointer;
+  display: grid;
+  align-content: end;
+  border: 5px solid var(--darkblue);
+}
+
+/* Contact me */
+
+#contact
+{
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 18% 76%;
+  grid-template-areas: 
+  "contacttitle contactboxes"
+  ;
+  height: 250px;
+}
+
+
+#contacttitle
+{
+  grid-area: contacttitle;
+  width: 70%;
+  margin-left: 19%;
+  margin-top: 10%;
+}
+
+#contactline {
+  position: absolute;
+  border-right: 4px solid var(--darkblue);
+  height: 200px;
+  margin-left: 13.4%;
+}
+
+#contactboxes
+{
+  grid-area: contactboxes;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
+
+
