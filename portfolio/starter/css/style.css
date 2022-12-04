@@ -4,8 +4,8 @@
 
 :root {
   --darkblue: #020E54;
-  --cream: #FFEAB8;
-  --lightgreen: #A6DEAE;
+  --blue: #4f3fb5;
+  --palepurple: #938bcc;
 }
 
 
@@ -16,6 +16,11 @@ a{
   padding-right: 10px;
   color: var(--darkblue);
   font-size: 18px;
+}
+
+.container a
+{
+  font-weight: bold;
 }
 body {
   margin: 0;
@@ -44,63 +49,93 @@ h2{
  
 }
 /* HEADER BAR */
-header
-{
-  background-color: var(--lightgreen);
+
+
+.headercontainer{
+  background-color: var(--blue);
   width: 100%;
-  height: 95px;
-}
-header h1
-{
-  background-color: var(--cream);
-  width: 1fr;
-  height: 1fr;
-  position: absolute;
-  top: 10px;
-  padding-left: 8%;
-  font-size: 50px;
-
-
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 100%;
+  grid-template-areas:
+  "nameheader  toplinks"
+  ;
+  height: 100px;
 }
 
-header .container
+#nameheader
 {
-  position: absolute;
+  grid-area: nameheader;
+  background-color: var(--darkblue);
+  top: 11px;
+  text-align: end;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  font-size: 45px;
+  color: var(--palepurple);
+}
+
+
+#toplinks
+{
+  grid-area: toplinks;
   display: flex;
-
-  width: 35%;
-  height: 60px;
-  margin-top: 16px;
-}
-
-header nav
-{
+  justify-content: end;
   align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  right: 7%;
+  margin-right: 10%;
 }
+
+#toplinks a{
+  margin-left: 100px;
+}
+
+
 
 /* BANNER */
 
-.hero-banner div
+.screen-banner
 {
   background-image: url(../images/02-hero-bg.jpg);
   height: 200px;
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+  grid-template-areas: 
+  "bannerimg bannertext" 
+  ;
+
 }
 
-.hero-banner h2
+#bannerimg
 {
-  position: absolute;
-  font-size: 45px;
-  padding: 0px 20px 0px 20px;
-  right: 135px;
-  top: 210px;
-  background-color: var(--cream);
+  height: 160px;
+  margin-left: 20px;
+  margin-top: 18px;
+}
+
+#bannertext
+{
+  grid-area: bannertext;
+  background-color: var(--darkblue);
+  color: var(--palepurple);
+  margin-top: 20px;
+  display: inline-block;
+  padding: 0px 10px 0px 10px;
+  font-size: 40px;
+  margin-top: 110px;
+  margin-left: 50%;
+  text-align: start;
 }
 
 /* about me */
-
+#abouttitlemedia
+{
+  visibility: hidden;
+}
 #about
 {
   display: grid;
@@ -114,17 +149,18 @@ header nav
 
 #abouttitle
 {
+  position: absolute;
   grid-area: abouttitle;
-  width: 50%;
   margin-top: 40px;
-  margin-left: 30%;
+  right: 84%;
+  text-align: end;
 
 }
 #aboutline {
   position: absolute;
   border-right: 4px solid var(--darkblue);
   height: 200px;
-  margin-left: 11%;
+  left: 175px;
 }
 
 
@@ -144,76 +180,152 @@ header nav
   grid-template-rows: 50% 25% 25%;
   grid-template-columns: 19% 37% 37%;
   grid-template-areas: 
-  "worktitle workimg1 workimg1"
-  "worktitle workimg2 workimg3"
-  "worktitle workimg4 workimg5"
+  "worktitle section1 section1"
+  "worktitle section2 section3"
+  "worktitle section4 section5"
   ;
   height: 900px;
 }
 
+#workheader
+{
+  position: absolute;
+  z-index: 1;
+  background-color: var(--darkblue);
+  color: var(--palepurple);
+  margin-top: 85px;
+  width: auto;
+  height: 85px;
+  padding-left: 15px;
+  padding-top: 10px;
+  font-size: 25px;
+  padding-right: 15px;
+}
 
+#section1 #workheader
+{
+  margin-top: 300px;
+}
+
+h4
+{
+  font-size: 15px;
+}
 
 #worktitle
 {
-  width: 50%;
-  margin-left: 34%;
-
+  grid-area: worktitle;
+  position: absolute;
+  margin-top: 5px;
+  right: 84%;
 }
 
 #workline {
   position: absolute;
   border-right: 4px solid var(--darkblue);
   height: 905px;
-  margin-left: 10.4%;
+  left: 153px;
+}
+
+#work a
+{
+  border: none;
+}
+#links
+{
+  position: absolute;
+  text-decoration: none;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+#section1
+{
+  grid-area: section1;
 }
 
 #workimg1
 {
-  background-image: url(../images/02-portfolio-1.jpg);
-  grid-area: workimg1;
+  background-image: url(../images/coderefactor.PNG);
+  opacity: 0.6;
+}
+
+#section2
+{
+  grid-area: section2;
 }
 
 #workimg2
 {
- 
   background-image: url(../images/02-portfolio-1.jpg);
-  grid-area: workimg2;
+  opacity: 0.6;
+}
+
+
+#section3
+{
+  grid-area: section3;
 }
 
 #workimg3
 {
- 
-  background-image: url(../images/02-portfolio-1.jpg);
-  grid-area: workimg3;
+  background-image: url(../images/02-portfolio-2.jpg);
+  opacity: 0.6;
+}
+
+#section4
+{
+  grid-area: section4;
 }
 
 #workimg4
 {
+  background-image: url(../images/02-portfolio-3.jpg);
+  opacity: 0.6;
+}
 
-  background-image: url(../images/02-portfolio-1.jpg);
-  grid-area: workimg4;
+
+#section5
+{
+  grid-area: section5;
 }
 
 #workimg5
 {
-
-  background-image: url(../images/02-portfolio-1.jpg);
-  grid-area: workimg5;
+  background-image: url(../images/02-run-buddy.jpg);
+  opacity: 0.6;
+}
+#workimg1:hover,
+#workimg2:hover,
+#workimg3:hover,
+#workimg4:hover,
+#workimg5:hover
+{
+  opacity: 1;
 }
 
 .categoryGridArea {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   margin: 10px;
-  cursor: pointer;
   display: grid;
-  align-content: end;
   border: 5px solid var(--darkblue);
 }
 
-/* Contact me */
+.imgattributes
+{
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+align-content: end; 
 
+}
+
+/* CONTACT ME */
+
+#contacttitlemedia
+{
+  visibility: hidden;
+}
 #contact
 {
   display: grid;
@@ -228,17 +340,18 @@ header nav
 
 #contacttitle
 {
+  position: absolute;
   grid-area: contacttitle;
-  width: 70%;
-  margin-left: 19%;
-  margin-top: 10%;
+  right: 84%;
+  margin-top: 30px;
+  text-align: end;
 }
 
 #contactline {
   position: absolute;
   border-right: 4px solid var(--darkblue);
   height: 200px;
-  margin-left: 13.4%;
+  left: 221px;
 }
 
 #contactboxes
@@ -249,7 +362,193 @@ header nav
   justify-content: space-around;
 }
 
+@media only screen and (max-width: 1280px) {
+  /* BANNER MEDIA */
+.headercontainer
+{
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+  height: 225px;
+  grid-template-areas: 
+  "nameheader" 
+  "toplinks" 
+  ;
+}
+#nameheader
+{
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 15px;
+}
+#toplinks
+{
+  width: 100%;
+  left: 0%;
+  justify-content: center;
+  padding-right: 90px;
+}
+#bannertext
+{
+  margin-left: 25%;
+  text-align: start;
+}
+/* 
+ABOUT MEDIA */
+#abouttitle
+{
+  visibility: hidden;
+}
+#about
+{
+  grid-template-rows: 20% 80%;
+  grid-template-columns: 100%;
+  grid-template-areas: 
+  "abouttitle"
+  "abouttext"
+  ;
+}
+#abouttitlemedia
+{
+  visibility: visible;
+  position: absolute;
+  margin-left: 8%;
+}
+#aboutline
+{
+  border-right: none;
+  border-bottom: 4px solid var(--darkblue);
+  width: 1030px;
+  left: 0;
+  height: 0;
+  margin-top: 70px;
+ 
+}
+#abouttext
+{
+  margin-right: 10%;
+  margin-left: 10%;
+}
+/* WORK MEDIA */
+#work
+{
+
+  grid-template-rows: 15% 50% 25% 25%;
+  grid-template-columns: 45% 45%;
+  grid-template-areas: 
+  "worktitle worktitle"
+  "section1 section1"
+  "section2 section3"
+  "section4 section5"
+  ;
+  margin-bottom: 200px;
+ margin-left: 110px;
+}
+
+#worktitle
+{
+  position: absolute;
+  left: 8%;
+}
+
+
+#workline
+{
+  border-right: none;
+  border-bottom: 4px solid var(--darkblue);
+  width: 1030px;
+  left: 0;
+  height: 0;
+  margin-top: 70px;
+ 
+}
+/* CONTACT MEDIA */
+#contacttitle
+{
+ visibility: hidden;
+}
+#contacttitlemedia
+{
+  visibility: visible;
+  position: absolute;
+  margin-left: 8%;
+}
+#contactline
+{
+  border-right: none;
+  border-bottom: 4px solid var(--darkblue);
+  width: 1030px;
+  left: 0;
+  height: 0;
+  margin-top: 70px;
+}
+#contact
+{
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+  grid-template-areas: 
+  "contacttitle"
+  "contactboxes"
+  ;
+}
+}
 
 
 
+@media only screen and (max-width: 850px)
+{
+/* BANNER MEDIA MINI */
+#bannerimg
+{
+  visibility: hidden;
+}
 
+#bannertext
+{
+  margin-left: 0;
+}
+
+/* WORK MEDIA MINI */
+#work
+{
+
+  grid-template-rows: 10% 25% 25% 25% 25% 25%;
+  grid-template-columns: 85%;
+  grid-template-areas: 
+  "worktitle"
+  "section1"
+  "section2"
+  "section3"
+  "section4" 
+  "section5"
+  ;
+  margin-bottom: 350px;
+  margin-top: 35px;
+ margin-left: 100px;
+}
+
+
+#section1 #workheader
+{
+  margin-top: 90px;
+}
+
+/* CONTACT MEDIA MINI */
+#contactboxes
+{
+  position: absolute;
+  grid-area: contactboxes;
+  display: grid;
+  align-items: center;
+  margin-left: 60px;
+  margin-top: 120px;
+  text-align: left;
+}
+#toplinks
+{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  left: 0%;
+  padding-right: 0px;
+}
+}
